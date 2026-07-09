@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+<body>
+<div class="leaderboard-shell">
+    <header class="leaderboard-header">
+        <div>
+            <span class="leaderboard-tag">Leaderboard</span>
+            <h1>Top performers</h1>
+            <p>Track the best employees and celebrate the highest scores.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <button id="musicToggleBtn" type="button" class="button-secondary" style="border:none; cursor:pointer;">▶ Play music</button>
+            <a href="full-scores.html" class="button-secondary">View all scores</a>
+        </div>
+    </header>
+
+    <section class="podium">
+        <div class="medal second">
+            <div class="medal-rank">2nd</div>
+            <strong id="secondName">Player 2</strong>
+        </div>
+        <div class="medal first">
+            <div class="medal-rank">1st</div>
+            <strong id="firstName">Player 1</strong>
+        </div>
+        <div class="medal third">
+            <div class="medal-rank">3rd</div>
+            <strong id="thirdName">Player 3</strong>
+        </div>
+    </section>
+</div>
+<audio id="leaderboardMusic" loop muted playsinline preload="auto">
+    <source src="audio/win.mp3" type="audio/mpeg">
+</audio>
+<script src="js/leaderboard.js"></script>
+</body>
+</html>

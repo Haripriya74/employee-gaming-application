@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="quiz-page">
+    <div class="quiz-card">
+        <div class="quiz-topbar">
+            <div>
+                <span class="quiz-badge">Live quiz</span>
+                <h1>Employee Challenge</h1>
+                <p class="quiz-subtitle">Answer fast and score high on the leaderboard.</p>
+            </div>
+            <div class="player-panel">
+                <span class="player-label">Player</span>
+                <strong id="playerName">Loading...</strong>
+                <span id="employeeCodeDisplay" class="player-code">Quiz code</span>
+            </div>
+        </div>
+
+        <div class="quiz-status">
+            <div class="status-card">
+                <span>Time left</span>
+                <strong id="timer">0</strong>
+                <small id="timerText">sec</small>
+            </div>
+            <div class="status-card status-primary">
+                <span>Score</span>
+                <strong id="scoreValue">0</strong>
+                <small>/ <span id="totalQuestions">0</span></small>
+            </div>
+        </div>
+
+        <section id="questionContainer" class="question-container"></section>
+
+        <div class="action-row">
+            <button id="skipBtn" class="button-secondary">Skip</button>
+            <button id="submitBtn" class="button-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="audio/background.mp3" type="audio/mpeg">
+</audio>
+<audio id="correctSound">
+    <source src="audio/correct.mp3" type="audio/mpeg">
+</audio>
+<audio id="wrongSound">
+    <source src="audio/wrong.mp3" type="audio/mpeg">
+</audio>
+<audio id="clockSound" loop>
+    <source src="audio/clock.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Question</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+<div class="admin-page">
+    <div class="admin-shell">
+        <div class="admin-page__topbar">
+            <div>
+                <h1>Create Quiz</h1>
+                <p class="page-description">Add quiz questions with options, difficulty, and optional images.</p>
+            </div>
+        </div>
+
+        <div class="form-card" id="quizSetupCard">
+            <form id="quizForm">
+                <div class="form-row">
+                    <label for="quizTitle">Quiz Title</label>
+                    <input type="text" id="quizTitle" placeholder="Enter quiz title" required />
+                </div>
+                <button type="submit">Create Quiz</button>
+            </form>
+        </div>
+
+        <div class="form-card" id="questionSection" hidden>
+            <div class="form-row">
+                <label>Quiz title</label>
+                <div id="currentQuizTitle" class="live-info">No quiz selected</div>
+            </div>
+            <form id="questionForm">
+                <div class="form-row question-type-row">
+                    <label for="questionType">Question Type</label>
+                    <select id="questionType" required>
+                        <option value="">Select Question Type</option>
+                        <option value="mcq">Multiple Choice</option>
+                        <option value="fill">Fill In The Blank</option>
+                        <option value="image">Image Question</option>
+                        <option value="image">True or False</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="question">Question</label>
+                    <textarea id="question" placeholder="Enter question text" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="questionImageUrl">Image URL (optional)</label>
+                    <input type="url" id="questionImageUrl" placeholder="https://example.com/image.jpg" />
+                </div>
+
+                <div class="field-grid">
+                    <div class="form-row">
+                        <label for="option1">Option 1</label>
+                        <input type="text" id="option1" placeholder="Option 1" />
+                    </div>
+                    <div class="form-row">
+                        <label for="option2">Option 2</label>
+                        <input type="text" id="option2" placeholder="Option 2" />
+                    </div>
+                    <div class="form-row">
+                        <label for="option3">Option 3</label>
+                        <input type="text" id="option3" placeholder="Option 3" />
+                    </div>
+                    <div class="form-row">
+                        <label for="option4">Option 4</label>
+                        <input type="text" id="option4" placeholder="Option 4" />
+                    </div>
+                </div>
+
+                <div class="field-grid">
+                    <div class="form-row">
+                        <label for="answer">Correct Answer</label>
+                        <input type="text" id="answer" placeholder="Correct answer text" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="points">Points</label>
+                        <select id="points" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy (15 sec)</option>
+                        <option value="hard">Hard (30 sec)</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="loadPreviousQuestionBtn" class="secondary-btn" disabled>Previous Question</button>
+                    <button type="submit" id="questionSubmitBtn">Next Question</button>
+                </div>
+            </form>
+            <div class="share-card">
+                <p class="share-label">Share code via</p>
+                <div class="code-display">
+                    <span>Quiz code:</span>
+                    <strong id="currentQuizCode">—</strong>
+                </div>
+                <div class="share-buttons">
+                    <div class="share-item">
+                        <a id="whatsappShare" target="_blank" class="share-button whatsapp" title="Share on WhatsApp">
+                            <svg viewBox="0 0 24 24" class="share-icon" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.148-1.758-.867-2.03-.967-.273-.1-.472-.148-.672.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.148-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.173.198-.298.298-.497.1-.198.05-.372-.025-.52-.075-.148-.672-1.618-.92-2.218-.242-.582-.487-.503-.672-.513l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.075-.124-.273-.198-.57-.346z"/></svg>
+                        </a>
+                        <span class="share-text">WhatsApp</span>
+                    </div>
+                    <div class="share-item">
+                        <a id="telegramShare" target="_blank" class="share-button telegram" title="Share on Telegram">
+                            <svg viewBox="0 0 24 24" class="share-icon" xmlns="http://www.w3.org/2000/svg"><path d="M22.868 3.09c-.174-.146-.425-.18-.643-.089L1.726 11.405c-.377.13-.618.486-.618.882s.24.75.618.882l5.337 1.763 2.11 6.82c.093.301.388.5.71.5.092 0 .186-.015.277-.048.388-.138.615-.553.524-.964l-.805-3.598 2.634 1.88c.196.14.434.199.672.17.236-.028.452-.14.598-.328l6.965-8.292c.204-.243.255-.596.132-.887-.123-.291-.39-.488-.708-.515l-8.384-.733 7.595-3.56c.278-.13.46-.408.46-.71 0-.194-.075-.384-.208-.528z"/></svg>
+                        </a>
+                        <span class="share-text">Telegram</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/create-question.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Codes</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+<div class="login-container">
+    <h1>Employee Codes</h1>
+    <p style="margin-bottom:20px; color:rgba(255,255,255,0.85); font-size:15px;">
+        Create a new employee access code and share it with your team. Employees will use this code to log in and play.
+    </p>
+    <form id="codeForm">
+        <input type="text" id="employeeCode" placeholder="Enter code to share" required />
+        <button type="submit">Create Code</button>
+    </form>
+    <div id="codeList" style="margin-top:20px;"></div>
+</div>
+<script src="js/employee-codes.js"></script>
+</body>
+</html>

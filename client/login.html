@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-shell">
+        <div class="login-card">
+            <div class="login-brand">
+                <span class="brand-badge">⚡</span>
+                <div>
+                    <h1>Employee Gaming Portal</h1>
+                    <p>Enter your details and join the live quiz.</p>
+                </div>
+            </div>
+
+            <form id="employeeForm" class="login-form">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" placeholder="Enter your name" required>
+
+
+                <label for="quizCodeInput">Quiz Code</label>
+                <input type="text" id="quizCodeInput" name="quizCodeInput" placeholder="Enter quiz code" required>
+
+                <input type="hidden" id="quizCode" name="quizCode" value="">
+
+                <button type="submit">Start Game</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

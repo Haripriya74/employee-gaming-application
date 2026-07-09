@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Quiz Control</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+<div class="admin-page">
+    <div class="admin-shell">
+        <div class="admin-page__topbar">
+            <div>
+                <h1>Live Quiz Control</h1>
+                <p class="page-description">Start, monitor, and stop your live quiz session.</p>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <div class="form-row">
+                <label>Current Quiz</label>
+                <div id="activeQuizTitle" class="live-info">No live quiz active.</div>
+            </div>
+            <div class="form-row quiz-code-row">
+                <label>Quiz Code</label>
+                <div id="activeQuizCode" class="live-info">—</div>
+            </div>
+            <div class="form-row live-stats-row">
+                <div><strong>Participants</strong><div id="participantCount">0</div></div>
+                <div><strong>Answered</strong><div id="answeredCount">0</div></div>
+            </div>
+            <div class="form-row">
+    <label>Select Quiz</label>
+
+    <select id="quizSelect">
+        <option value="">Loading quizzes...</option>
+    </select>
+
+</div>
+            <div class="action-row">
+                <button id="startLiveBtn" class="small-action-btn">Start Quiz</button>
+                <button id="nextQuestionBtn" class="small-action-btn secondary">Next Question</button>
+                <button id="endLiveBtn" class="small-action-btn danger">End Quiz</button>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h2>Live Player Activity</h2>
+            <div id="playerList" class="player-list">No players joined yet.</div>
+        </div>
+    </div>
+</div>
+<script src="js/live-quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Question</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+<div class="login-container">
+    <h1>✏️ Edit Question</h1>
+    <form id="editQuestionForm">
+        <select id="questionType" required>
+            <option value="">Select Question Type</option>
+            <option value="mcq">Multiple Choice</option>
+            <option value="fill">Fill In The Blank</option>
+            <option value="image">Image Question</option>
+            <option value="puzzle">Puzzle</option>
+        </select>
+
+        <textarea id="question" placeholder="Enter Question" rows="4" required></textarea>
+
+        <input type="url" id="questionImageUrl" placeholder="Image URL (optional)" />
+        <input type="text" id="option1" placeholder="Option 1" />
+        <input type="text" id="option2" placeholder="Option 2" />
+        <input type="text" id="option3" placeholder="Option 3" />
+        <input type="text" id="option4" placeholder="Option 4" />
+        <input type="text" id="answer" placeholder="Correct Answer" required />
+        <select id="difficulty">
+            <option value="easy">Easy (15 sec)</option>
+            <option value="hard">Hard (30 sec)</option>
+        </select>
+        <button type="submit">Save Changes</button>
+    </form>
+    <div style="margin-top:20px;text-align:center;">
+        <a href="view-questions.html" style="color:#fff; background:#5f7cff; padding:12px 20px; border-radius:12px; text-decoration:none;">Back to Questions</a>
+    </div>
+</div>
+<script src="js/edit-question.js"></script>
+</body>
+</html>

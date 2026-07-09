@@ -1,0 +1,348 @@
+/* Animated Background */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    color:white;
+    text-align:center;
+
+    background:linear-gradient(-45deg,#14001f,#2d0b45,#4b0082,#220033);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Heading */
+
+h1{
+    margin-top:20px;
+    font-size:45px;
+    letter-spacing:2px;
+    text-shadow:0 0 15px gold;
+}
+
+/* Podium */
+
+.podium{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:35px;
+
+    margin:60px 0;
+
+}
+
+.player{
+
+    text-align:center;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+.player:hover{
+
+    transform:scale(1.08);
+
+    transition:.4s;
+
+}
+
+.player.revealed{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.player{
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Winner Name */
+
+.player h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+/* Podium Box */
+
+.box{
+
+    width:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    border-radius:20px 20px 0 0;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Gold */
+
+.first .box{
+
+    height:280px;
+
+    background:linear-gradient(180deg,#FFD700,#FFA500);
+
+    color:black;
+
+    box-shadow:0 0 35px gold;
+
+    animation:goldGlow 2s infinite alternate;
+
+}
+
+/* Silver */
+
+.second .box{
+
+    height:210px;
+
+    background:linear-gradient(180deg,#eeeeee,#9b9b9b);
+
+    color:black;
+
+    box-shadow:0 0 25px silver;
+
+}
+
+/* Bronze */
+
+.third .box{
+
+    height:170px;
+
+    background:linear-gradient(180deg,#d18a38,#8b4513);
+
+    box-shadow:0 0 20px #cd7f32;
+
+}
+
+/* Shine Animation */
+
+.box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-60%;
+
+    width:50%;
+
+    height:300%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    animation:shine 3s infinite;
+
+}
+
+@keyframes shine{
+
+    from{
+        left:-70%;
+    }
+
+    to{
+        left:170%;
+    }
+
+}
+
+/* Floating */
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+/* Gold Glow */
+
+@keyframes goldGlow{
+
+    from{
+        box-shadow:0 0 20px gold;
+    }
+
+    to{
+        box-shadow:0 0 55px gold;
+    }
+
+}
+
+/* Crown */
+
+.first::before{
+
+    content:"👑";
+
+    font-size:55px;
+
+    display:block;
+
+    animation:bounce 1.5s infinite;
+
+    margin-bottom:10px;
+
+}
+
+.second::before{
+
+    content:"🥈";
+
+    font-size:45px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+.third::before{
+
+    content:"🥉";
+
+    font-size:45px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+/* Table */
+
+table{
+
+    width:85%;
+
+    margin:40px auto;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(8px);
+
+}
+
+th{
+
+    background:linear-gradient(90deg,#8e24aa,#6a1b9a);
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+th,td{
+
+    padding:18px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:rgba(255,255,255,.12);
+
+    transform:scale(1.01);
+
+}
+
+/* Rank Colors */
+
+tbody tr:nth-child(1) td:first-child{
+
+    color:gold;
+    font-weight:bold;
+
+}
+
+tbody tr:nth-child(2) td:first-child{
+
+    color:silver;
+    font-weight:bold;
+
+}
+
+tbody tr:nth-child(3) td:first-child{
+
+    color:#cd7f32;
+    font-weight:bold;
+
+}

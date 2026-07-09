@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+<body>
+
+<h1>🏆 Employee Leaderboard</h1>
+
+<div class="podium">
+
+    <div class="player second">
+        <h3 id="secondName">Player 2</h3>
+        <div class="box">2nd</div>
+    </div>
+
+    <div class="player first">
+        <h3 id="firstName">Player 1</h3>
+        <div class="box">1st</div>
+    </div>
+
+    <div class="player third">
+        <h3 id="thirdName">Player 3</h3>
+        <div class="box">3rd</div>
+    </div>
+
+</div>
+
+<audio id="adminLeaderboardMusic" loop muted playsinline preload="auto">
+    <source src="/audio/win.mp3" type="audio/mpeg">
+</audio>
+
+<table id="scoreTable">
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+
+    <tbody></tbody>
+</table>
+
+<script src="js/leaderboard.js"></script>
+
+</body>
+</html>

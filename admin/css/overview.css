@@ -1,0 +1,43 @@
+body{
+    background:#12071f;
+    color:white;
+    font-family:Arial;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#241136;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.card h2{
+    font-size:40px;
+    color:#ff4da6;
+}
+
+#topPerformers{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.performer{
+    flex:1;
+    background:#241136;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
